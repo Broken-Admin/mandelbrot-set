@@ -8,3 +8,6 @@
 - Files are documented to a valid extend and attemptedly understandable.
 - Files in ./modules are various functions which are used by the generation files to generate the color values.
 - Directories ./stored-values and ./images are to be used for the storage of data and image files. Deletion of these directories may cause issues in code.
+
+### Demonstration
+![8192x4096](md-image.png)
