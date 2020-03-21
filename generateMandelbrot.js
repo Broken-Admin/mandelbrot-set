@@ -1,12 +1,14 @@
 /*
  * Generates Mandelbrot set images.
  * By default images are stored to ./images.
+ * Modify width variable to change image size.
  */
 
 const { convertColor, generateMandelbrot } = require('./modules/functions');
 const Jimp = require('jimp');
 
 // Set the width and height of image
+// Modify width variable to generate different size images
 let width = 200;
 let height = width / 2;
 

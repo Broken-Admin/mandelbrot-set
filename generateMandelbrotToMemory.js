@@ -1,6 +1,7 @@
 /*
  * Generates Mandelbrot set images and their subsequent color data to json files in memory.
- * By default images are stored to ./images and json data files are stored to ./stored-values
+ * By default images are stored to ./images and json data files are stored to ./stored-values.
+ * Modify width variable to change image size.
  */
 
 const { convertColor, generateMandelbrot } = require('./modules/functions');
@@ -11,6 +12,7 @@ const FileSync = require('lowdb/adapters/FileSync');
 
 
 // Set the width and height of image
+// Modify width variable to generate different size images
 let width = 2048;
 let height = width / 2;
 // Store file title for later use, single variable allows for change
