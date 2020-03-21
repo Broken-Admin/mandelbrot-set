@@ -10,4 +10,4 @@
 - Directories ./stored-values and ./images are to be used for the storage of data and image files. Deletion of these directories may cause issues in code.
 
 ### Demonstration
-![8192x4096](md-image.png)
+![4096x2048](md-image.png)
