@@ -1,0 +1,4 @@
+image-archives
+stored-values/*.json
+images/*.png
+node_modules
