@@ -1,0 +1,28 @@
+{
+    "title": "Mandelbrot",
+    "name": "mandlebrot-set",
+    "version": "1.0.0",
+    "description": "A program designed to output a visual image representation of the Mandelbrot set",
+    "keywords": [
+        "complex",
+        "numbers",
+        "mathematics",
+        "image" 
+    ],
+    "homepage": "https://github.com/Broken-Admin/mandelbrot-set",
+    "bugs": {
+        "url": "https://github.com/Broken-Admin/mandelbrot-set/issues",
+        "email": "willwritehtmlformoney@gmail.com"
+    },
+    "license": "LGPL-3.0",
+    "author": "Broken-Admin",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Broken-Admin/mandelbrot-set"
+    },
+    "dependencies": {
+        "mathjs": "^6.6.1",
+        "jimp": "^0.9.6",
+        "lowdb": "^1.0.0"
+    }
+}
