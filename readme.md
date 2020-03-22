@@ -11,3 +11,7 @@
 
 ### Demonstration
 ![4096x2048](md-image.png)
+
+### Notes / TODO
+
+- TODO: Possibly have the memory generation have a seperate version of which outputs values at which the Mandelbrot set is escaped.
