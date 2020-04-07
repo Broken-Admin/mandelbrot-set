@@ -2,6 +2,7 @@ const { complex, add, multiply, abs, sin, sqrt, pi, equal, sort, format } = requ
 const { lerp, inverseLerp } = require('./lerp-modules');
 const Jimp = require('jimp');
 
+
 /*
  * Various functions used to generate mandelbrot color values.
  */
@@ -12,6 +13,7 @@ const Jimp = require('jimp');
  * @returns {number} A converted RGBA hex color string. 
  */
 function convertColor(c) {
+  rgbConv(i)
   if (c.length < 3) {
     console.log("Error! convertColor not provided with R, G, or B value.");
     process.exit();
@@ -98,12 +100,12 @@ function generateMandelbrot(x, y) {
     if (abs(c) > 2) { // Check if we have escaped the Mandelbrot set
       // If we have escaped the set, determine a color value in which
       // we use i as our value to determine such color
-      return (rgbConv(i)); // Return our determined color value.
+      return (); // Return our determined color value.
     }
 
-      // If value has not escaped the Mandelbrot set, continue
-      // recursive checks.
-      c = multiply(c, c) // Perform recursive function of c_n = f_c0(c_n-1).
+    // If value has not escaped the Mandelbrot set, continue
+    // recursive checks.
+    c = multiply(c, c) // Perform recursive function of c_n = f_c0(c_n-1).
     c = add(c, c0); // Continuation of function.
   }
   // If our set never escapes Mandelbrot set, return black as RGB values.
