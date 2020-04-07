@@ -9,11 +9,11 @@ const Jimp = require('jimp');
 
 /**
  * @summary Convert `c`, an array of decimal color values to a single RGBA (Red, Green, Blue, Alpha/Opacity) hex.
- * @param {number[]} c An array of RGBA values. Value ranges are [0,255]
- * @returns {number} A converted RGBA hex color string. 
+ * @param {number} i Value at which the mandelbrot set is escaped
+ * @returns {number} A converted JIMP RGBA hex color string. 
  */
-function convertColor(c) {
-  rgbConv(i)
+function convertColor(i) {
+  let c = rgbConv(i) // Convert set escape value i to RGB array.
   if (c.length < 3) {
     console.log("Error! convertColor not provided with R, G, or B value.");
     process.exit();
@@ -61,7 +61,6 @@ function rgbConv(i) {
   let b = Math.round(
     lerp(0, 255, bPercent)
   );
-
   // Return values as array[3]
   return ([r, g, b])
 }
@@ -98,9 +97,7 @@ function generateMandelbrot(x, y) {
     // is determined by the itteration at which it escapes and the
     // maximum number of inverseLerp function calls within rgbConv.
     if (abs(c) > 2) { // Check if we have escaped the Mandelbrot set
-      // If we have escaped the set, determine a color value in which
-      // we use i as our value to determine such color
-      return (); // Return our determined color value.
+      return (i); // Return the value at which the set is escaped.
     }
 
     // If value has not escaped the Mandelbrot set, continue
@@ -108,8 +105,9 @@ function generateMandelbrot(x, y) {
     c = multiply(c, c) // Perform recursive function of c_n = f_c0(c_n-1).
     c = add(c, c0); // Continuation of function.
   }
-  // If our set never escapes Mandelbrot set, return black as RGB values.
-  return ([0, 0, 0])
+  // If our set never escapes Mandelbrot set, return 0, which is later
+  // converted to black by rgbConv in convertColor.
+  return (0)
 
 }
 

@@ -13,13 +13,13 @@ const FileSync = require('lowdb/adapters/FileSync');
 
 // Set the width and height of image
 // Modify width variable to generate different size images
-let width = 2048;
+let width = 200;
 let height = width / 2;
 // Store file title for later use, single variable allows for change
 // at single line of code.
 const imageFileTitle = `mandelbrot-${width}x${height}`;
 // "-data" is appended to the json values file.
-const dataFileTitle = `${imageFileTitle}-data`;
+const dataFileTitle = `${imageFileTitle}-values`;
 
 // Check if color values storage file exists.
 // Default value being true could create issues.
@@ -35,26 +35,24 @@ if (!valuesFileExists) {
   const mandelbrotData = low(dataAdapter);
 
   // Set defaults
-  mandelbrotData.defaults({ colorValues: [] })
+  mandelbrotData.defaults({ values: [] })
     .write();
 
   for (let x = 0; x < width; x++) { // Loop through columns.
     let column = []
     for (let y = 0; y < height; y++) { // Loop through rows.
-      // Store image color values
+      // Store set escape values
       column.push(
-        convertColor(
           generateMandelbrot(
             (x - (0.75 * width)) / (width / 4),
             (y - (width / 4)) / (width / 4)
           )
-        )
       );
     }
     // Display some data on the 
     console.log(`( Columns Finished - ${x + 1} ) | ( Columns Left - ${(width - 1) - x} )`);
     // Write column data to file
-    mandelbrotData.get('colorValues')
+    mandelbrotData.get('values')
       .push(column)
       .write();
   }
@@ -76,7 +74,8 @@ let image = new Jimp(width, height, 0x0, (err, image) => {
   }
   for (let x = 0; x < width; x++) {
     for (let y = 0; y < height; y++) {
-      image.setPixelColor(imageValues['colorValues'][x][y], x, y);
+      colorValue = convertColor(imageValues['values'][x][y])
+      image.setPixelColor(colorValue, x, y);
     }
   }
   image.write(`./images/${imageFileTitle}.png`);
