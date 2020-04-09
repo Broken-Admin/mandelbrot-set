@@ -9,7 +9,7 @@ const Jimp = require('jimp');
 
 // Set the width and height of image
 // Modify width variable to generate different size images
-let width = 200;
+let width = 2048;
 let height = width / 2;
 
 // Store file title for later use, single variable allows for change
