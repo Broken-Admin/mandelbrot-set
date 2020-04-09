@@ -54,7 +54,6 @@ function rgbConv(i) {
   // Return values as array[3]
   return ([r, g, b])
 }
-// Interpret values from generateMandelbrot
 
 module.exports.rgbConv = rgbConv;
 
