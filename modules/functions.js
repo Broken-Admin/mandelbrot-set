@@ -8,9 +8,9 @@ const Jimp = require('jimp');
  */
 
 /**
- * @summary Convert `c`, an array of decimal color values to a single RGBA (Red, Green, Blue, Alpha/Opacity) hex.
+ * @summary Convert `i`, value at which the mandelbrot set is escaped to a JIMP interpretable color.
  * @param {number} i Value at which the mandelbrot set is escaped
- * @returns {number} A converted JIMP RGBA hex color string. 
+ * @returns {number} A converted JIMP color number. 
  */
 function convertColor(i) {
   let c = rgbConv(i) // Convert set escape value i to RGB array.
@@ -20,17 +20,7 @@ function convertColor(i) {
   } else if (!c[3]) { // If not provided value for Alpha/Opacity, default to 255.
     c[3] = 255;
   }
-  /*for(let i=0;i<c.length;i++) { 
-    let temp = c[i];    
-    if(c[i] < 16) {
-      c[i] = '0' + c[i].toString(16);
-    } else {
-      c[i] = c[i].toString(16);
-    }
-  }
-  let color = `0x${c[0]}${c[1]}${c[2]}${c[3]}`;
-  color = parseInt(color,16);
-  */
+
   let color = Jimp.rgbaToInt(c[0], c[1], c[2], c[3]);
   return (color);
 }
