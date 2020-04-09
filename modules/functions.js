@@ -2,7 +2,6 @@ const { complex, add, multiply, abs, sin, sqrt, pi, equal, sort, format } = requ
 const { lerp, inverseLerp } = require('./lerp-modules');
 const Jimp = require('jimp');
 
-
 /*
  * Various functions used to generate mandelbrot color values.
  */
