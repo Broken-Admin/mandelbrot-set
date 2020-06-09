@@ -43,10 +43,10 @@ if (!valuesFileExists) {
     for (let y = 0; y < height; y++) { // Loop through rows.
       // Store set escape values
       column.push(
-          generateMandelbrot(
-            (x - (0.75 * width)) / (width / 4),
-            (y - (width / 4)) / (width / 4)
-          )
+        generateMandelbrot(
+          (x - (0.75 * width)) / (width / 4),
+          (y - (width / 4)) / (width / 4)
+        )
       );
     }
     // Display some data on the 
