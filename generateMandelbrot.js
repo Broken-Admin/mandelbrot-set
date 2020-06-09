@@ -1,4 +1,5 @@
 /*
+ * Generation by this file does not allow for the generation of different colors or replicas afterwards, as no values are stored.
  * Generates Mandelbrot set images.
  * By default images are stored to ./images.
  * Modify width variable to change image size.
@@ -35,7 +36,7 @@ for (let x = 0; x < width; x++) { // Loop through columns.
       )
     );
   }
-  console.log(`( ${x} ) | ( ${width-x} )`)
+  console.log(`( ${x} ) | ( ${width - x} )`)
   imageValues.push(column);
 }
 

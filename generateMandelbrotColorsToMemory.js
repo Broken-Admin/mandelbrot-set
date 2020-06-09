@@ -1,4 +1,6 @@
 /*
+ * Generation by this file does not allow for the generation of different colors afterwards from colors stored.
+ * Replicas of the originally generated image can be generated from stored values.
  * Generates Mandelbrot set images and their subsequent color data to json files in memory.
  * By default images are stored to ./images and json data files are stored to ./stored-values.
  * Modify width variable to change image size.
