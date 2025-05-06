@@ -7,7 +7,7 @@
         "complex",
         "numbers",
         "mathematics",
-        "image" 
+        "image"
     ],
     "homepage": "https://github.com/Broken-Admin/mandelbrot-set",
     "bugs": {
@@ -21,8 +21,8 @@
         "url": "https://github.com/Broken-Admin/mandelbrot-set"
     },
     "dependencies": {
-        "mathjs": "^6.6.1",
-        "jimp": "^0.9.6",
-        "lowdb": "^1.0.0"
+        "jimp": "^1.6.0",
+        "lowdb": "^1.0.0",
+        "mathjs": "^14.4.0"
     }
 }
